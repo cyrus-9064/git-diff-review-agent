@@ -1,17 +1,3 @@
-"""Score the review agent on small cases with KNOWN bugs.
-
-Each case builds a throwaway git repo (before -> after), lets the agent review the
-change, and checks the answer:
-  - bug cases   : PASS if the answer mentions one of the keywords
-  - clean cases : PASS if the answer says "No problems found" (otherwise: false alarm)
-
-Run:  python eval.py
-      python eval.py --model llama3.1:8b      # compare another model
-Results are appended to eval_results.csv so you can build a comparison table.
-
-Note: keyword matching is a rough judge. It is good enough to compare models,
-and you should say so in an interview.
-"""
 import argparse
 import csv
 import sys
