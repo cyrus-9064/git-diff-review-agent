@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "0. Offline tests (no model needed)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/test_offline.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "1. Create practice repo",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/setup_practice.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "2. Review the practice repo",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/review.py",
+      "args": ["practice"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "3. Run the evaluation",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/eval.py",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}
