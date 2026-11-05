@@ -20,10 +20,11 @@ flowchart LR
 
 ## Guardrails
 
-- Step limit: at most 5 tool rounds per file, then it stops.
+- Step limit: at most 5 model rounds per file. On the last round the model is told to give its final answer and may not call tools, so it cannot loop forever or finish without a reply.
 - Tools are read-only. The agent can never edit, delete or run code.
 - `read_file` refuses paths outside the repo, `.git`, and `.env*` files.
-- Bad tool arguments, unknown tools and model errors become messages, not crashes.
+- Bad tool arguments, unknown tools and model errors become messages, not crashes. The tools also accept the extra or renamed arguments that models sometimes send.
+- A failed model call is retried up to 3 times (with a longer wait on rate limits).
 - Long diffs and tool results are cut to a fixed size.
 
 ## Setup (VS Code)
