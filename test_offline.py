@@ -1,8 +1,3 @@
-"""Offline tests: check the plain code and the agent loop WITHOUT any real model.
-
-A fake model plays the AI, so these run instantly and cost nothing.
-Run:  python test_offline.py      (or: pytest)
-"""
 import json
 import tempfile
 from pathlib import Path
